@@ -25,7 +25,7 @@ class distractionViewController: UIViewController {
         print(csvArray)
         
         distractionArray = csvArray[distractionCount].components(separatedBy: ",")
-        distractionNumberLabel.text = "第\(distractionCount + 1)問"
+        distractionNumberLabel.text = "\(distractionCount + 1) / 3"
         distractionTextView.text = distractionArray[0]
         yesButton.setTitle(distractionArray[2], for: .normal)
         noButton.setTitle(distractionArray[3], for: .normal)
