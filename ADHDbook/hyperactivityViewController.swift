@@ -7,39 +7,39 @@
 
 import UIKit
 
-class distractionViewController: UIViewController {
-    @IBOutlet weak var distractionNumberLabel: UILabel!
-    @IBOutlet weak var distractionTextView: UITextView!
+class hyperactivityViewController: UIViewController {
+    @IBOutlet weak var hyperactivityNumberLabel: UILabel!
+    @IBOutlet weak var hyperactivityTextView: UITextView!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     
     var csvArray: [String] = []
-    var distractionArray: [String] = []
-    var distractionCount = 0
+    var hyperactivityArray: [String] = []
+    var hyperactivityCount = 0
     var correctCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        csvArray = loadCSV(fileName: "distraction")
+        csvArray = loadCSV(fileName: "hyperactivity")
         print(csvArray)
         
-        distractionArray = csvArray[distractionCount].components(separatedBy: ",")
-        distractionNumberLabel.text = "\(distractionCount + 1) / 3"
-        distractionTextView.text = distractionArray[0]
-        yesButton.setTitle(distractionArray[2], for: .normal)
-        noButton.setTitle(distractionArray[3], for: .normal)
+        hyperactivityArray = csvArray[hyperactivityCount].components(separatedBy: ",")
+        hyperactivityNumberLabel.text = "\(hyperactivityCount + 1) / 3"
+        hyperactivityTextView.text = hyperactivityArray[0]
+        yesButton.setTitle(hyperactivityArray[2], for: .normal)
+        noButton.setTitle(hyperactivityArray[3], for: .normal)
         // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let scoreVC = segue.destination as! scoreDistractionViewController
+        let scoreVC = segue.destination as! scoreHyperactivityViewController
         scoreVC.correct = correctCount
     }
     
     //ボタンを押した時に呼ばれる
     @IBAction func btnAction(sender: UIButton) {
-        if sender.tag == Int(distractionArray[1]) {
+        if sender.tag == Int(hyperactivityArray[1]) {
             correctCount += 1
             print("YES")
         } else {
@@ -50,16 +50,16 @@ class distractionViewController: UIViewController {
     }
     func nextQuiz() {
         // 問題番号を進める
-        distractionCount += 1
-        if distractionCount < csvArray.count {
-            distractionArray = csvArray[distractionCount].components(separatedBy: ",")
-            distractionNumberLabel.text = "第\(distractionCount + 1)問"
-            distractionTextView.text = distractionArray[0]
-            yesButton.setTitle(distractionArray[2], for: .normal)
-            noButton.setTitle(distractionArray[3], for: .normal)
+        hyperactivityCount += 1
+        if hyperactivityCount < csvArray.count {
+            hyperactivityArray = csvArray[hyperactivityCount].components(separatedBy: ",")
+            hyperactivityNumberLabel.text = "\(hyperactivityCount + 1) / 3"
+            hyperactivityTextView.text = hyperactivityArray[0]
+            yesButton.setTitle(hyperactivityArray[2], for: .normal)
+            noButton.setTitle(hyperactivityArray[3], for: .normal)
             
         } else {
-            performSegue(withIdentifier: "toScoreDistraction", sender: nil)
+            performSegue(withIdentifier: "toScoreHyperactivity", sender: nil)
         }
         
     }
