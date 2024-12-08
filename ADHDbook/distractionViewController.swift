@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class distractionViewController: UIViewController {
     @IBOutlet weak var distractionNumberLabel: UILabel!
@@ -13,6 +14,7 @@ class distractionViewController: UIViewController {
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     
+    var bannerView: GADBannerView!
     var csvArray: [String] = []
     var distractionArray: [String] = []
     var distractionCount = 0
@@ -20,6 +22,12 @@ class distractionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-7923877881339580/6704043176"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        addBannerViewToView(bannerView)
         
         csvArray = loadCSV(fileName: "distraction")
         print(csvArray)
@@ -74,5 +82,26 @@ class distractionViewController: UIViewController {
         print("エラー")
         }
         return csvArray
+    }
+//    広告
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+        [NSLayoutConstraint(item: bannerView,
+                    attribute: .bottom,
+                    relatedBy: .equal,
+                    toItem: view.safeAreaLayoutGuide,
+                    attribute: .bottom,
+                    multiplier: 1,
+                    constant: 0),
+         NSLayoutConstraint(item: bannerView,
+                    attribute: .centerX,
+                    relatedBy: .equal,
+                    toItem: view,
+                    attribute: .centerX,
+                    multiplier: 1,
+                    constant: 0)
+        ])
     }
 }

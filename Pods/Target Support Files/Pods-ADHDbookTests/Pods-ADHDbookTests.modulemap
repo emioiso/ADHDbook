@@ -1,0 +1,6 @@
+framework module Pods_ADHDbookTests {
+  umbrella header "Pods-ADHDbookTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
