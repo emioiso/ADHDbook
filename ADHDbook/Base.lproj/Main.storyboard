@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,37 +13,39 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="ADHDbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heX-qU-c1p">
-                                <rect key="frame" x="55" y="528" width="72" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heX-qU-c1p">
+                                <rect key="frame" x="50" y="491.5" width="72" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3x5-3N-cxF"/>
+                                    <constraint firstAttribute="height" constant="50" id="eHb-Tq-sv4"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="衝動性"/>
                                 <connections>
                                     <segue destination="ZKW-xJ-hvu" kind="presentation" id="BSM-9J-l7L"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-id-c8d">
-                                <rect key="frame" x="266" y="527" width="72" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-id-c8d">
+                                <rect key="frame" x="172" y="491.5" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="raq-ew-wcx"/>
+                                    <constraint firstAttribute="width" constant="100" id="zY4-bc-XSd"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="多動性"/>
                                 <connections>
                                     <segue destination="KAr-oY-dQr" kind="presentation" id="rPb-P5-epQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="あなたの特徴を選択しましょう。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-nY-YgF">
-                                <rect key="frame" x="81" y="131" width="231" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmZ-0F-f3P">
-                                <rect key="frame" x="-10" y="167" width="415" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmZ-0F-f3P" userLabel="あなたの特徴はどれが近いですか？ 一つ選んでください。">
+                                <rect key="frame" x="30" y="110" width="315" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="08L-bm-Ohp"/>
+                                    <constraint firstAttribute="height" constant="60" id="ACW-zi-giZ"/>
+                                </constraints>
                                 <string key="text">あなたの特徴はどれが近いですか？
 一つ選んでください。
 </string>
@@ -51,30 +53,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ7-wI-ka8">
-                                <rect key="frame" x="153" y="369" width="88" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ7-wI-ka8">
+                                <rect key="frame" x="111" y="341.5" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ZBe-gq-OI4"/>
+                                    <constraint firstAttribute="height" constant="50" id="dWQ-7f-HlR"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="注意散漫"/>
                                 <connections>
                                     <segue destination="1QB-tE-kCf" kind="presentation" id="fcI-aF-QQ5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの特徴を選択しましょう。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-nY-YgF">
+                                <rect key="frame" x="30" y="50" width="315" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="VJZ-AM-mWe"/>
+                                    <constraint firstAttribute="height" constant="30" id="dNo-WX-r3u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EmZ-0F-f3P" secondAttribute="trailing" constant="30" id="3Uf-tT-Xzb"/>
+                            <constraint firstItem="EmZ-0F-f3P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="6Rv-Ww-S4J"/>
+                            <constraint firstItem="iZX-nY-YgF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="EeM-be-OPJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iZX-nY-YgF" secondAttribute="trailing" constant="30" id="Fwb-e5-OW2"/>
+                            <constraint firstItem="EmZ-0F-f3P" firstAttribute="top" secondItem="iZX-nY-YgF" secondAttribute="bottom" constant="30" id="dyS-dv-9j0"/>
+                            <constraint firstItem="iZX-nY-YgF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fbE-Su-mFm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EmZ-0F-f3P" secondAttribute="trailing" constant="30" id="jlh-e7-xMN"/>
+                            <constraint firstItem="EmZ-0F-f3P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="lic-wV-b18"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1379.3893129770993" y="121.83098591549296"/>
+            <point key="canvasLocation" x="-343.19999999999999" y="85.907046476761622"/>
         </scene>
         <!--Distraction View Controller-->
         <scene sceneID="mqO-Lh-4gb">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="1QB-tE-kCf" customClass="distractionViewController" customModule="ADHDbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="czL-Cr-zlX">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZJ-Ro-me9">
@@ -143,7 +168,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="KAr-oY-dQr" customClass="hyperactivityViewController" customModule="ADHDbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zd9-o3-Upq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNX-YK-Dq8">
@@ -206,14 +231,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xL8-q7-yXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="lnQ-iY-p2d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="473" y="1596"/>
+            <point key="canvasLocation" x="599" y="1569"/>
         </scene>
         <!--Impulsivity View Controller-->
         <scene sceneID="LEg-lC-1aV">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ZKW-xJ-hvu" customClass="impulsivityViewController" customModule="ADHDbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W4M-of-NsD">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-3N-pAd">
@@ -276,14 +301,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGW-kL-xP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1pe-4f-hHc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="473" y="849"/>
+            <point key="canvasLocation" x="599" y="826"/>
         </scene>
         <!--Score Distraction View Controller-->
         <scene sceneID="L8m-4z-lp9">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="H38-yj-gCu" customClass="scoreDistractionViewController" customModule="ADHDbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAK-IS-UcU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30Z-I3-vdw">
@@ -333,7 +358,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCL-d0-nsd">
-                                <rect key="frame" x="123" y="635" width="184" height="35"/>
+                                <rect key="frame" x="95" y="428" width="184" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="衝動性の質問も答える"/>
@@ -359,7 +384,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Kam-Y1-tRa" customClass="scoreImpulsivityViewController" customModule="ADHDbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WMT-g5-2LA">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbu-jW-8fM">
@@ -378,15 +403,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="多動性の質問も答える"/>
                                 <connections>
                                     <segue destination="KAr-oY-dQr" kind="presentation" id="bdY-Cb-5Qc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQZ-0P-eR6">
-                                <rect key="frame" x="116" y="635" width="199" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="注意散漫の質問も答える"/>
-                                <connections>
-                                    <segue destination="1QB-tE-kCf" kind="presentation" id="AQK-zL-4Ut"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEK-lI-GLA">
@@ -417,6 +433,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQZ-0P-eR6">
+                                <rect key="frame" x="88" y="455" width="199" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="注意散漫の質問も答える"/>
+                                <connections>
+                                    <segue destination="1QB-tE-kCf" kind="presentation" id="AQK-zL-4Ut"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjM-v3-yYE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -428,14 +453,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xck-fP-c9a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="775"/>
+            <point key="canvasLocation" x="1342" y="825"/>
         </scene>
         <!--Score Hyperactivity View Controller-->
         <scene sceneID="hGS-ed-cyM">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="YbX-sC-yAd" customClass="scoreHyperactivityViewController" customModule="ADHDbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ha-Fz-UBY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh2-Iv-IGC">
@@ -504,14 +529,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3h-nu-9ea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426.7175572519084" y="1471.8309859154931"/>
+            <point key="canvasLocation" x="1374" y="1568"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BSM-9J-l7L"/>
         <segue reference="rPb-P5-epQ"/>
         <segue reference="fcI-aF-QQ5"/>
-        <segue reference="gmL-Ob-VS7"/>
+        <segue reference="z9J-d5-3hH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
